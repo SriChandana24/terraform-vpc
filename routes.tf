@@ -11,4 +11,9 @@ resource "aws_route" "route-to-default-vpc" {
   vpc_peering_connection_id = aws_vpc_peering_connection.peer-to-default-vpc.id
 }
 
+resource "aws_route" "route-from-default-vpc" {
+  route_table_id            = var.DEFAULT_ROUTE_TABLE_ID
+  destination_cidr_block    = var.VPC_CIDR
+  vpc_peering_connection_id = aws_vpc_peering_connection.peer-to-default-vpc.id
+}
 
