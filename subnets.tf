@@ -1,9 +1,18 @@
-resource "aws_subnet" "subnet" {
+resource "aws_subnet" "public-subnets" {
   count             = var.SUBNETS
   vpc_id            = aws_vpc.main.id
   cidr_block        = cidrsubnet(var.VPC_CIDR, 1, count.index)
   availability_zone = element(var.AZ, count.index)
 }
+
+resource "aws_subnet" "private-subnets" {
+  count             = var.SUBNETS
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = cidrsubnet(var.VPC_CIDR, 1, count.index)
+  availability_zone = element(var.AZ, count.index)
+}
+
+
 
 resource "aws_route_table_association" "rt-assoc" {
   count          = var.SUBNETS
