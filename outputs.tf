@@ -22,4 +22,10 @@ output "PRIVATE_SUBNETS_CIDR" {
   value = aws_subnet.private-subnets.*.cidr_block
 }
 
+output "DEFAULT_VPC_ID" {
+  value = var.DEFAULT_VPC_ID
+}
 
+output "DEFAULT_VPC_CIDR" {
+  value = var.DEFAULT_VPC_CIDR
+}
