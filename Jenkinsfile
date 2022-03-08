@@ -25,6 +25,7 @@ pipeline {
 
       stage('Terraform Apply') {
         when {
+          beforeInput true
           expression {
             GIT_BRANCH == "main"
           }
@@ -42,3 +43,4 @@ pipeline {
     }
 
 }
+
