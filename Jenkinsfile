@@ -12,8 +12,6 @@ pipeline {
 
       stage('Terraform Init') {
         steps {
-          sh 'pwd'
-          sh 'find .'
           sh 'terraform init -backend-config=env-${APPLY_ENV}/backend.tfvars'
         }
       }
