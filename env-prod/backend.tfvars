@@ -1,3 +1,3 @@
-bucket = "terraform-b62"
-key    = "mutable/vpc/prod/terraform.tfstate"
+bucket = "chandana-devops"
+key    = "project/vpc/prod/terraform.tfstate"
 region = "us-east-1"
